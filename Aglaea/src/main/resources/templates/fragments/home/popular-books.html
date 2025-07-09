@@ -1,0 +1,45 @@
+<section id="popular-books" class="bookshelf py-5 my-5" th:fragment="popular-books(categoryId)">
+    <div class="container">
+        <div class="row">
+            <div class="inner-content">
+                <div class="product-list" data-aos="fade-up">
+                    <div class="col-md-12">
+
+                        <!-- Header -->
+                        <div class="section-header text-center">
+                            <div class="title">
+                                <span>Some quality items</span>
+                            </div>
+                            <h2 class="section-title">Sách hiện hành</h2>
+                        </div>
+
+                        <!-- Tabs danh mục -->
+                        <ul class="nav nav-tabs d-flex justify-content-center gap-3 mb-4">
+                            <!-- Tab Tất cả -->
+                            <li class="nav-item">
+                                <a class="nav-link category-link"
+                                   th:classappend="${categoryId == null or categoryId == 0} ? 'active' : ''"
+                                   data-category=""
+                                   href="#">Tất cả</a>
+                            </li>
+
+                            <!-- Các tab category -->
+                            <li class="nav-item" th:each="category : ${categories}">
+                                <a class="nav-link category-link"
+                                   th:classappend="${categoryId != null and categoryId.toString() == category.id.toString()} ? 'active' : ''"
+                                   th:data-category="${category.id}"
+                                   href="#">
+                                    <span th:text="${category.name}"></span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Danh sách sách sẽ được load động tại đây -->
+                        <div id="bookList" class="row"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

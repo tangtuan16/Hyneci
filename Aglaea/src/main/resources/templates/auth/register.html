@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aglaea - Register</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/images/bgr.jpeg}">
+    <link rel="stylesheet" th:href="@{/css/login-style.css}">
+
+</head>
+<body>
+<!-- Loading Screen -->
+<div id="loading-screen">
+    <div class="loader"></div>
+</div>
+<div class="wrapper">
+    <h2 style="user-select: none;">Đăng ký</h2>
+
+    <form th:action="@{/auth/register}" method="post" th:object="${user}" id="register-form" autocomplete="off">
+        <div class="input-field">
+            <input type="text" name="username" required>
+            <label>Tài khoản</label>
+        </div>
+        <div class="input-field">
+            <input type="email" name="email" required>
+            <label>Email</label>
+        </div>
+        <div class="input-field">
+            <input type="password" id="password" name="password" required>
+            <label>Mật khẩu</label>
+        </div>
+        <div class="input-field">
+            <input type="password" id="re-password" name="re-password" required>
+            <label>Nhập lại mật khẩu</label>
+        </div>
+        <div id="password-error" class="alert alert-danger" style="display: none " ;>
+            <p style="background: #e9ecef; padding: 10px; border-radius: 5px;">Mật khẩu không khớp !</p>
+        </div>
+        <button type="submit" id="register-btn" style="margin-top: 10px; margin-bottom: 10px">Đăng ký</button>
+
+        <!-- Hiển thị thông báo lỗi -->
+        <div th:if="${error}" class="alert alert-danger">
+            <p th:text="${error}" style="background: #d4edda; padding: 10px; border-radius: 5px; margin-bottom: 10px"></p>
+        </div>
+
+        <!-- Hiển thị thông báo thành công -->
+        <div th:if="${success}" class="alert alert-success">
+            <p th:text="${success}" style="background: #d4edda; padding: 10px; border-radius: 5px;"></p>
+        </div>
+
+        <div class="register">
+            <p>Đã có tài khoản ? <a th:href="@{/auth/login}">Đăng nhập</a></p>
+        </div>
+    </form>
+</div>
+<script th:src="@{/js/register.js}"></script>
+</body>
+</html>

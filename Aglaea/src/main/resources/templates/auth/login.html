@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aglaea - Login</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/images/bgr.jpeg}">
+    <link rel="stylesheet" th:href="@{/css/login-style.css}">
+</head>
+<body>
+<!-- Loading Screen -->
+<div id="loading-screen">
+    <div class="loader"></div>
+</div>
+<div class="wrapper">
+    <h2 style="user-select: none;">Đăng nhập</h2>
+    <form id="loginForm" th:action="@{/auth/login}" method="post">
+        <div class="input-field">
+            <input type="text" name="username" required>
+            <label>Tài khoản</label>
+        </div>
+        <div class="input-field">
+            <input type="password" name="password" required>
+            <label>Mật khẩu</label>
+        </div>
+        <div class="forget">
+            <label for="remember">
+                <input type="checkbox" id="remember" name="remember-me">
+                <p>Nhớ mật khẩu</p>
+            </label>
+            <a th:href="@{/auth/forgot-password}">Quên mật khẩu</a></p>
+        </div>
+
+        <!-- Hiển thị thông báo thành công -->
+        <div th:if="${success}" class="alert alert-success">
+            <p th:text="${success}" style="background: #d4edda; padding: 10px; border-radius: 5px;margin-bottom: 10px"></p>
+        </div>
+
+        <div th:if="${error}" class="alert alert-danger">
+            <p th:text="${error}" style="background: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 10px"></p>
+        </div>
+
+        <button type="submit" id="loginButton">Đăng nhập</button>
+        <div class="register">
+            <p>Chưa có tài khoản ? <a th:href="@{/auth/register}">Đăng ký</a></p>
+        </div>
+    </form>
+</div>
+<script th:src="@{/js/login.js}"></script>
+</body>
+</html>
