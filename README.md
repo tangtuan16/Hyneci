@@ -14,7 +14,7 @@
 ##  Mô tả dự án
 Hệ thống quản lý thư viện bao gồm **API – Admin – Client**, giúp quản lý và mượn sách một cách tiện lợi, phân quyền rõ ràng giữa **Admin** và **Người dùng (Client)**.  
 
-### 🔹 1. API (Spring Boot – RESTful)
+###  1. API (Spring Boot – RESTful)
 - Xây dựng theo mô hình **MVC** và chuẩn **RESTful API**.  
 - Cung cấp đầy đủ **CRUD (GET, POST, PUT, DELETE)** cho cả **Admin** và **Client**.  
 - Tích hợp **Spring Security + JWT** để:
@@ -22,7 +22,7 @@ Hệ thống quản lý thư viện bao gồm **API – Admin – Client**, giú
   - Phân quyền dựa trên **Role** (Admin/User).  
 - Tài liệu API được quản lý qua **Swagger UI**.  
 
-### 🔹 2. Client (Spring Boot + Web)
+###  2. Client (Spring Boot + Web)
 - Tương tác với **API** để lấy dữ liệu.  
 - Các chức năng đã hoàn thành:
   - Đăng ký, Đăng nhập.  
@@ -30,7 +30,7 @@ Hệ thống quản lý thư viện bao gồm **API – Admin – Client**, giú
 - Đang phát triển:  
   - Trang chủ hiển thị danh sách sách từ **database**.  
 
-### 🔹 3. Admin (Java Swing)
+###  3. Admin (Java Swing)
 - Ứng dụng Desktop đơn giản dành cho **Admin**.  
 - Các chức năng chính:
   - **CRUD Sách (Product Management)**.  
@@ -71,7 +71,7 @@ Người dùng (Web) Admin (Java Swing)
 
 ---
 
-## 🛠️ Cách chạy dự án
+##  Cách chạy dự án
 1. Clone dự án:  
    ```bash
    git clone https://github.com/tangtuan16/Hyneci.git
